@@ -91,16 +91,16 @@ function buy(id) {
 // Exercise 2
 function cleanCart() {
     cartList.length= 0
-    let emptyCart= cartList.splice(0, cartList.length)
-    console.log(emptyCart)
-    document.getElementById('cart_list').innerHTML = emptyCart
+    cart.length= 0
+    total = 0 
+    document.getElementById('cart_list').innerHTML = "";
+
     document.getElementById('total_price').innerHTML = 0
 
 }
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
-    
     for (let i=0; i < cartList.length; i++) {
         total += cartList[i].price
     }    
@@ -173,8 +173,8 @@ function printCart() {
         document.getElementById('cart_list').innerHTML+= itemList
 
 
-
     })
+    
     document.getElementById('total_price').innerHTML = total
 
 }
