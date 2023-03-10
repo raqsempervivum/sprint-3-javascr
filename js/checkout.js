@@ -38,21 +38,12 @@ function validate() {
 		error++;
 
 	}
-	if(fEmail.value == ''){
+	if(fEmail.value == '' || validEmail.test(fEmail.value) == false){
 		document.getElementById("errorEmail").innerHTML= `This field is required and must contain an '@' and have, at least, 3 characters`
 		errorEmail.style.color = "red"
 		fEmail.style.borderColor = "red"
 		error++;
 
-	}
-	else if (validEmail.test(fEmail.value)) {
-		return true;
-	}
-	else { 
-		document.getElementById("errorEmail").innerHTML= `This field is required and must contain an '@' and have, at least, 3 characters`
-		errorEmail.style.color = "red"
-		fEmail.style.borderColor = "red"
-		error++;
 	}
 
 	if( fAddress.value == '' || fAddress.value.length <3){
@@ -70,43 +61,47 @@ function validate() {
 
 	}
 
-	if( fPassword == '') {
+	if( fPassword == '' || validPassword.test(fPassword.value) == false) {
 		document.getElementById("errorPassword").innerHTML= `Enter a correct password with 6 letters, at least one number, one uppercase and one lowercase letter`
 		errorPassword.style.color = "red"
 		fPassword.style.borderColor = "red"
 		error++;
 
 	}
-	else if (validPassword.test(fPassword.value)) {
-		return true;
-	}
-	else {
-		document.getElementById("errorPassword").innerHTML= `Enter a correct password with 6 letters, at least one number, one uppercase and one lowercase letter`
-		errorPassword.style.color = "red"
-		fPassword.style.borderColor = "red"
-		error++;
-	}
-	if( fPhone == ''){
+
+	if( fPhone == '' || validPhone.test(fPhone.value) == false){
 		document.getElementById("errorPhone").innerHTML= `Invalid phone number!! Must be 9 digits with no letters`
 		errorPhone.style.color = "red"
 		fPassword.style.borderColor = "red"
 		error++;
 
-	}
-	else if (validPhone.test(fPhone.value)) {
-		return true;
-	}
-	else {
-		document.getElementById("errorPhone").innerHTML= `Invalid phone number!! Must be 9 digits with no letters`
-		errorPhone.style.color = "red"
-		fPhone.style.borderColor = "red"
-		error++;
 	}
 
 	if(error>0){
 		alert("Error");
 	}else{
+		errorName.style.color = "green"
+		fName.style.borderColor = "green"
+		errorEmail.style.color = "green"
+		fEmail.style.borderColor = "green"
+		errorAdress.style.color = "green" // doesn't detect "Address"
+		fAddress.style.borderColor = "green"
+		errorLastN.style.color = "green"
+		fLastN.style.borderColor = "green"
+		errorPassword.style.color = "green"
+		fPassword.style.borderColor = "green"
+		errorPhone.style.color = "green"
+		fPhone.style.borderColor = "green"
+		document.getElementById("errorName").innerHTML= "Correct field"
+		document.getElementById("errorEmail").innerHTML= "Correct field"
+		document.getElementById("errorAddress").innerHTML= "Correct field"
+		document.getElementById("errorLastN").innerHTML= "Correct field"
+		document.getElementById("errorPassword").innerHTML= "Correct field"
+		document.getElementById("errorPhone").innerHTML= "Correct field"
+
 		alert("OK");
+		
+
 	}
 
 }
