@@ -130,7 +130,7 @@ function generateCart() {
 // Exercise 5
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
-        /* this isn't necessary: first, we let go of the products without any promotions so as it doesn't read the whole code
+        /* this isn't necessary: 
         if (cart[i].name ===  'Pasta' || 'All-in-one' ||  'Zero Make-up Kit' || 'Lip tint' || 'Lawn Dress' || 'Lawn-Chiffon Combo' || 'Toddler frock') {
             cart.push(element[i])
         }*/
@@ -158,9 +158,7 @@ function applyPromotionsCart() {
 // Exercise 6
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
-    /*generateCart();
-    calculateTotal();
-    applyPromotionsCart();*/
+
     generateCart() 
     applyPromotionsCart()
     calculateTotal()
@@ -224,6 +222,3 @@ function open_modal(){
 }
 
 
-/*cart.forEach(element => createelement(element));
-    const t_price = document.getElementById('total_price');
-    res = calculateTotal();*/
